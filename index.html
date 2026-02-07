@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Links to CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating hearts background generator -->
+    <div id="hearts-container"></div>
+
+    <div class="container" id="main-container">
+        <!-- Initial Screen -->
+        <div id="question-screen">
+            <div class="gif-container">
+                <img src="https://i.pinimg.com/originals/07/70/c4/0770c44187e13cf9ec232c2302db2fcf.gif" alt="Cute bear asking">
+            </div>
+            <h1>¿Quieres ser mi San Valentín? ❤️</h1>
+            <div class="buttons">
+                <button class="btn btn-yes" id="yesBtn">Sí</button>
+                <button class="btn btn-no" id="noBtn">No</button>
+            </div>
+        </div>
+
+        <!-- Success Screen -->
+        <div id="success-screen" class="hidden">
+            <div class="gif-container">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUybHhua2hobGIwZ3EzZHk5eXd1aTkxNmhraXZxYnpsZGphcXdqY2lvZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/QAB3dfWbviuR0iIC1T/200w.gif" alt="Celebration bear">
+            </div>
+            <h1>¡Sabía que dirías que sí! ❤️</h1>
+            <p class="final-text">Te amo mucho. Nos vemos el 14.</p>
+        </div>
+    </div>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Link to JS -->
+    <script src="script.js"></script>
+</body>
+</html>

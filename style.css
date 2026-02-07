@@ -1,0 +1,194 @@
+:root {
+    --primary-pink: #ffb7c5;
+    --dark-pink: #ff8fa3;
+    --text-color: #59303a;
+    --bg-color: #fff0f3;
+    --white: #ffffff;
+    --red-soft: #ff4d6d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: radial-gradient(#ffccd5 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 1rem;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255, 183, 197, 0.3);
+    backdrop-filter: blur(5px);
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--red-soft);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.gif-container {
+    margin-bottom: 2rem;
+}
+
+.gif-container img {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 80px; /* Space for growing button */
+    padding: 10px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.btn-yes {
+    background-color: var(--red-soft);
+    color: white;
+}
+
+.btn-yes:hover {
+    box-shadow: 0 8px 15px rgba(255, 77, 109, 0.4);
+    transform: scale(1.05); /* Slight hover effect independent of logic size */
+}
+
+.btn-no {
+    background-color: var(--primary-pink);
+    color: var(--text-color);
+}
+
+.btn-no:hover {
+    background-color: var(--dark-pink);
+    color: white;
+}
+
+/* Screen states */
+.hidden {
+    display: none;
+}
+
+.final-message {
+    animation: fadeIn 1s ease-in;
+}
+
+.final-text {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 1rem;
+}
+
+/* Float animation for hearts */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating hearts background */
+.floating-heart {
+    position: absolute;
+    color: var(--red-soft);
+    font-size: 20px;
+    animation: float 6s linear infinite;
+    top: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2rem; /* Smaller title on mobile */
+    }
+
+    .gif-container img {
+        width: 150px; /* Smaller image */
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+        width: auto; /* Allow buttons to fit content */
+        max-width: 100%; /* Prevent overflow */
+    }
+
+    .buttons {
+        gap: 10px;
+        flex-direction: row; /* Keep side by side if possible */
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 350px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    .buttons {
+        flex-direction: column; /* Stack buttons on very small screens */
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+    }
+}
